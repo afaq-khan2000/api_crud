@@ -30,7 +30,7 @@ function loadProducts() {
       $(".products").empty();
       for (var i = 0; i < response.length; i++) {
         $(".products").append(`
-        <div class="product col-sm-12 col-lg-4 my-3 px-3" data_id="${response[i]._id}">
+        <div class="product col-sm-12 col-md-6 col-lg-4 my-3 px-3" data_id="${response[i]._id}">
         <div class="card">
     <img class="card-img-top" src="./prod.jpg" alt="Card image cap">
     <div class="card-body">
