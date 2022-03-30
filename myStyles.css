@@ -1,7 +1,8 @@
-body{
-background-image: url("./bg.jpg");
+body {
+  background-image: url("./bg.jpg");
+  background-attachment: fixed;
 }
 
-.text-blue{
-    color: blue;
+.text-blue {
+  color: blue;
 }
