@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="myStyles.css" />
+  </head>
+  <body class="container">
+    <div class="text-center">
+      <h1 class="mt-3">Products List</h1>
+      <button
+        type="button"
+        class="btn btn-outline-dark mt-3 text-center"
+        data-toggle="modal"
+        data-target="#addingModal"
+      >
+        Add a Product
+      </button>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="addingModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Product Details</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                  class="form-control"
+                  id="name"
+                  placeholder="Enter name"
+                />
+                <small class="form-text text-muted"
+                  >Enter the Title of the Product.</small
+                >
+              </div>
+              <div class="form-group">
+                <label for="price">Price</label>
+                <input
+                  class="form-control"
+                  id="price"
+                  placeholder="Enter price"
+                />
+                <small class="form-text text-muted"
+                  >Enter the Price of the Product.</small
+                >
+              </div>
+              <div class="form-group">
+                <label for="color">Color</label>
+                <input
+                  class="form-control"
+                  id="color"
+                  placeholder="Enter color"
+                />
+                <small class="form-text text-muted"
+                  >Enter the color of the Product.</small
+                >
+              </div>
+              <div class="form-group">
+                <label for="department">Department</label>
+                <select class="form-control" id="department">
+                  <option>Clothing</option>
+                  <option>Music</option>
+                  <option>Beauty</option>
+                  <option>Jewelery</option>
+                  <option>Computers</option>
+                  <option>Grocery</option>
+                  <option>Gardens</option>
+                  <option>Movies</option>
+                  <option>Tools</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="description">Description</label>
+                <input
+                  class="form-control"
+                  id="description"
+                  placeholder="Enter description"
+                />
+                <small class="form-text text-muted"
+                  >Enter the Description of the Product.</small
+                >
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-outline-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" id="addBtn" class="btn btn-outline-primary">
+              Add Product
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Updating Modal -->
+    <div
+      class="modal fade"
+      id="updateModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Product Details</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <input type="hidden" class="form-control" id="updateId" />
+                <label for="updateName">Name</label>
+                <input
+                  class="form-control"
+                  id="updateName"
+                  placeholder="Enter name"
+                />
+                <small class="form-text text-muted"
+                  >Enter the Title of the Product.</small
+                >
+              </div>
+              <div class="form-group">
+                <label for="updatePrice">Price</label>
+                <input
+                  class="form-control"
+                  id="updatePrice"
+                  placeholder="Enter price"
+                />
+                <small class="form-text text-muted"
+                  >Enter the Price of the Product.</small
+                >
+              </div>
+              <div class="form-group">
+                <label for="updateColor">Color</label>
+                <input
+                  class="form-control"
+                  id="updateColor"
+                  placeholder="Enter color"
+                />
+                <small class="form-text text-muted"
+                  >Enter the color of the Product.</small
+                >
+              </div>
+              <div class="form-group">
+                <label for="updateDepartment">Department</label>
+                <select class="form-control" id="updateDepartment">
+                  <option>Clothing</option>
+                  <option>Music</option>
+                  <option>Beauty</option>
+                  <option>Jewelery</option>
+                  <option>Computers</option>
+                  <option>Grocery</option>
+                  <option>Gardens</option>
+                  <option>Movies</option>
+                  <option>Tools</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="updateDescription">Description</label>
+                <input
+                  class="form-control"
+                  id="updateDescription"
+                  placeholder="Enter description"
+                />
+                <small class="form-text text-muted"
+                  >Enter the Description of the Product.</small
+                >
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-outline-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              id="updateBtn"
+              class="btn btn-outline-primary"
+            >
+              Update Product
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row products mt-3">Loading...</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./jqCRUD.js"></script>
+  </body>
+</html>
