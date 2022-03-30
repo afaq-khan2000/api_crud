@@ -30,7 +30,7 @@ function loadProducts() {
       $(".products").empty();
       for (var i = 0; i < response.length; i++) {
         $(".products").append(`
-        <div class="col-4 my-3 px-3">
+        <div class="product col-sm-12 col-lg-4 my-3 px-3" data_id="${response[i]._id}">
         <div class="card">
     <img class="card-img-top" src="./prod.jpg" alt="Card image cap">
     <div class="card-body">
@@ -57,7 +57,8 @@ function loadProducts() {
 }
 
 function handleDelete() {
-  var id = $(this).parent().attr("data_id");
+  var id = $(this).closest(".product").attr("data_id");
+  console.log(id);
   $.ajax({
     url: "https://usman-recipes.herokuapp.com/api/products/" + id,
     method: "DELETE",
@@ -90,7 +91,7 @@ function addProduct() {
 }
 
 function handleUpdate() {
-  var id = $(this).parent().attr("data_id");
+  var id = $(this).closest(".product").attr("data_id");
   $.ajax({
     url: "https://usman-recipes.herokuapp.com/api/products/" + id,
     method: "GET",
